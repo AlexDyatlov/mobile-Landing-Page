@@ -1,0 +1,12 @@
+extends partials/head
+
+block vars 
+  - var siteTitle = 'Name'
+
+block content
+  .site-container
+    include partials/header
+    main.main
+    include partials/footer
+  script(src='js/vendor.js')
+  script(src='js/main.js')
