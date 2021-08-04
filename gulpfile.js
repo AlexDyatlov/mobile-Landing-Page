@@ -5,7 +5,7 @@ const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify-es').default;
 const del = require('del');
 const browserSync = require('browser-sync').create();
-const sass = require('gulp-sass');
+const less = require('gulp-less');
 const svgSprite = require('gulp-svg-sprite');
 const sourcemaps = require('gulp-sourcemaps');
 const rev = require('gulp-rev');
@@ -18,6 +18,7 @@ const image = require('gulp-image');
 const { readFileSync } = require('fs');
 const concat = require('gulp-concat');
 const pug = require('gulp-pug');
+const webp = require('gulp-webp');
 
 let isProd = false; // dev by default
 
@@ -38,9 +39,9 @@ const svgSprites = () => {
 }
 
 const styles = () => {
-  return src('./src/scss/**/*.scss')
+  return src(['./src/less/global.less', './src/less/main.less', './src/less/vendor.less'])
     .pipe(gulpif(!isProd, sourcemaps.init()))
-    .pipe(sass().on("error", notify.onError()))
+    .pipe(less().on("error", notify.onError()))
     .pipe(autoprefixer({
       cascade: false,
     }))
@@ -51,8 +52,8 @@ const styles = () => {
 };
 
 const stylesBackend = () => {
-	return src('./src/scss/**/*.scss')
-		.pipe(sass().on("error", notify.onError()))
+	return src(['./src/less/global.less', './src/less/main.less', './src/less/vendor.less'])
+		.pipe(less().on("error", notify.onError()))
     .pipe(autoprefixer({
       cascade: false,
 		}))
@@ -105,6 +106,12 @@ const images = () => {
     .pipe(dest('./app/img'))
 };
 
+const webps = () => {
+  return src('./src/img/**/*.{png,jpg,jpeg}')
+  .pipe(webp())
+  .pipe(dest('./app/img/webp'))
+};
+
 const pugInclude = () => {
   return src(['./src/*.pug'])
     .pipe(
@@ -123,7 +130,7 @@ const watchFiles = () => {
     },
   });
 
-  watch('./src/scss/**/*.scss', styles);
+  watch('./src/less/**/*.less', styles);
   watch('./src/js/**/*.js', scripts);
   watch('./src/partials/*.pug', pugInclude);
   watch('./src/partials/**/*.pug', pugInclude);
@@ -135,7 +142,7 @@ const watchFiles = () => {
 }
 
 const cache = () => {
-  return src('app/**/*.{css,js,svg,png,jpg,jpeg,woff2}', {
+  return src('app/**/*.{css,js,svg,png,jpg,jpeg,woff2,webp}', {
     base: 'app'})
     .pipe(rev())
     .pipe(revDel())
@@ -174,6 +181,8 @@ const toProd = (done) => {
 exports.default = series(clean, pugInclude, scripts, styles, resources, images, svgSprites, watchFiles);
 
 exports.build = series(toProd, clean, pugInclude, scripts, styles, resources, images, svgSprites, htmlMinify);
+
+exports.buildwebp = series(toProd, clean, pugInclude, scripts, styles, resources, images, webps, svgSprites, htmlMinify);
 
 exports.cache = series(cache, rewrite);
 
