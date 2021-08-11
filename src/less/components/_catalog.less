@@ -1,0 +1,73 @@
+.catalog-companies {
+  position: relative;
+  padding: 36px 0 41px;
+  border-radius: 10px;
+  background-color: @color-shark;
+
+  &__inner {
+    margin-bottom: 31px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid @color-tuna;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    color: @color-white;
+    font-weight: 500;
+  }
+
+  &__descr {
+    color: @color-white;
+  }
+
+  &__service {
+    position: absolute;
+    right: 29px;
+    top: 41px;
+    display: block;
+    width: 57px;
+    height: 57px;
+    border-radius: 8px;
+    background-color: @color-tuna;
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 11px;
+      height: 17px;
+      background: center/cover no-repeat url("../img/arrow.svg");
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 15px 10px 17px;
+    border-radius: 8px;
+    color: @color-white;
+    border: 1px solid @color-white;
+    text-align: center;  
+  }
+
+  .company &__descr {
+    margin-bottom: 34px;
+    max-width: 265px;
+  }
+
+  .company &__link {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 50%;
+      top: 50%;
+      transform: translate(-75px, -50%);
+      width: 24px;
+      height: 28px;
+      background: center/cover no-repeat url("../img/telegram.svg");
+    }
+  }
+}

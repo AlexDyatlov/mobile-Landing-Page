@@ -1,0 +1,75 @@
+.menu {
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+
+  &__services {
+    position: relative;
+    padding: 9px 35px 10px 22px;
+    font-weight: 500;
+    border: 1px solid @color-lilac;
+    border-radius: 8px;
+    color: @color-main;
+
+    &::before {
+      position: absolute;
+      content: "";
+      right: 23px;
+      top: 16px;
+      width: 6px;
+      height: 9px;
+      background: center/cover no-repeat url("../img/arrow-black.svg");
+    }
+  }
+
+  &__list {
+    display: none;
+    border-top: 1px solid @color-lilac;
+  }
+
+  &__item {
+    position: relative;
+    padding: 15px 11px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid @color-lilac;
+    transition: background-color 0.3s ease-in-out;
+
+    &::before {
+      position: absolute;
+      content: "";
+      right: 9px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 12px;
+      background: center/cover no-repeat url("../img/arrow-menu.svg");
+    }
+    
+    svg {
+      margin-right: 23px;
+      width: 31px;
+      height: 31px;
+      object-fit: cover;
+      fill: @color-zircon;
+      transition: fill 0.3s ease-in-out;
+    }
+
+    &:hover {
+      background-color: @color-selago-light;
+
+      svg {
+        fill: @color-selago;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    color: @color-main;
+  }
+
+  .footer &__services {
+    border-color: @color-heather;
+  }
+}

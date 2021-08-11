@@ -1,0 +1,26 @@
+section.pitstop
+  .container 
+    h2.pitstop__title.title Заправил машину? Заправься сам!
+    +pitstops({'pitstops':[{
+      'link' : '#',
+      'img' : 'coffee',
+      'alt' : 'Питстоп coffe',
+    }, {
+      'link' : '#',
+      'img' : 'dram',
+      'alt' : 'Питстоп dram',
+    }, {
+      'link' : '#',
+      'img' : 'food',
+      'alt' : 'Питстоп еда и точка',
+    }, {
+      'link' : '#',
+      'img' : 'drive',
+      'alt' : 'Питстоп соль и перец',
+    }, {
+      'link' : '#',
+      'img' : 'benzo-cafe',
+      'alt' : 'Питстоп бензо кафе',
+    }]})
+    .pitstop__menu
+      a.pitstop__menu-link(href="#") Меню всех питстопов →

@@ -1,0 +1,74 @@
+.insurers {
+  padding: 40px 0 33px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 17px;
+  }
+
+  &__call {
+    position: relative;
+    padding: 11px 37px 14px 14px;
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid @color-blue-light;
+    border-radius: 8px;
+    color: @color-blue;
+
+    &::after {
+      position: absolute;
+      content: "";
+      right: 13px;
+      width: 18px;
+      height: 18px;
+      background: center/cover no-repeat url("../img/phone.svg");
+    }
+  }
+
+  &__items {
+    margin-bottom: 21px;
+    border-top: 1px solid @color-lilac;
+  }
+
+  &__item {
+    padding: 19px 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid @color-lilac;
+
+    picture {
+      line-height: 0;
+    }
+  }
+
+  &__image {
+    margin-right: 20px;
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  &__phone {
+    &.service__phone {
+      margin: 0;
+      margin-left: auto;
+    }
+  }
+
+  &__btn {
+    padding: 9px 20px 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 500;
+    color: @color-white;
+    background-color: @color-blue-light;
+  }
+}

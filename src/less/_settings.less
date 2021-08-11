@@ -9,11 +9,15 @@ html {
 }
 
 body {
-  min-width: 320px;
+  min-width: 375px;
   overflow-x: hidden;
   margin: 0;
-  font-family: "asd", sans-serif;
-  background-color: var(--color-white);
+  font-family: "Gilroy", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.18;
+  color: @color-main;
+  background-color: @color-white;
 }
 
 img {
@@ -52,6 +56,21 @@ button {
 
 .container {
   padding: 0 20px;
+}
+
+.title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.description {
+  color: @color-bright-gray;
+  max-width: 245px;
+
+  p {
+    margin: 0;
+  }
 }
 
 .js-focus-visible :focus:not(.focus-visible) {

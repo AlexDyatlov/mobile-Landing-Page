@@ -1,0 +1,46 @@
+.pitstop {
+  padding: 21px 0 24px;
+  background-color: @color-selago-light;
+
+  &__title {
+    margin-bottom: 27px;
+  }
+
+  &__items {
+    display: flex;
+    padding-bottom: 4px;
+    margin-bottom: 28px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__item {
+    scroll-snap-align: end;
+    scroll-snap-stop: always;
+
+    &:not(:last-child) {
+      margin-right: 21px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 64px;
+    height: 64px;
+  }
+
+  &__image {
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
+  &__menu {
+    text-align: right;
+
+    &-link {
+      color: @color-blue;
+    }
+  }
+}

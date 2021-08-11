@@ -1,0 +1,128 @@
+.assistance {
+  padding: 77px 0 22px;
+
+  &__title {
+    margin-bottom: 8px;
+  }
+
+  &__descr {
+    margin-bottom: 27px;
+  }
+}
+
+.service {
+  display: flex;
+  justify-content: space-between;
+  background-color: @color-selago-light;
+  border: 1px solid @color-lilac;
+  border-radius: 8px;
+
+  &--select {
+    .service__phone {
+      display: none;
+    }
+
+    .service__link {
+      position: relative;
+      display: block;
+      width: 28px;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      background-color: @color-blue-light;
+
+      &::after {
+        position: absolute;
+        content: "";
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 6px;
+        height: 9px;
+        background: center/cover no-repeat url("../img/arrow.svg");
+      }
+    }
+  }
+
+  &__content {
+    padding: 12px 0 14px 11px;
+    display: flex;
+  }
+
+  &__box {
+    max-width: 42px;
+    margin-right: 16px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 41px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  &__score {
+    position: relative;
+    display: block;
+    font-weight: 500;
+    font-size: 15px;
+    color: @color-bright-gray;
+    text-align: right;
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 1px;
+      width: 13px;
+      height: 13px;
+      background: center/cover no-repeat url("../img/star.svg");
+    }
+  }
+
+  &__info {
+    max-width: 190px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 2px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  &__descr {
+    font-size: 15px;
+    color: @color-bright-gray;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__phone {
+    position: relative;
+    align-self: flex-end;
+    margin-bottom: 25px;
+    margin-right: 11px;
+    font-size: 14px;
+    color: @color-blue;
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 5px;
+      top: -30px;
+      width: 25px;
+      height: 25px;
+      background: center/cover no-repeat url("../img/phone.svg");
+    }
+  }
+
+  &__link {
+    display: none;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}

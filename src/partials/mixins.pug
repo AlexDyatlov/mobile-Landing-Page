@@ -1,0 +1,62 @@
+mixin svg(name)
+  svg 
+    use(xlink:href=`img/sprite.svg#${name}`)
+
+mixin menu-list(data)
+  ul.menu__list
+    each item in data.items
+      li.menu__item
+        +svg(item.name)
+        a.menu__link(href="#") #{item.link}
+
+mixin assistance-services(data)
+  .services
+    each service in data.services
+      article(class="service" + service.class)
+        .service__content
+          .service__box
+            picture
+              source(type="image/webp", srcset=`img/${service.img}.webp`)
+              img.service__image(src=`img/${service.img}.jpg`, alt=service.alt)
+            span.service__score #{service.score}
+          .service__info
+            h3.service__title #{service.title}
+            .service__descr 
+              p #{service.descr}
+        a.service__phone(href=`tel:${service.phone}`) Вызов
+        a.service__link(href=service.link, target="_blank")
+
+mixin pitstops(data)
+  ul.pitstop__items
+    each pitstop in data.pitstops
+      li.pitstop__item
+        a.pitstop__link(href=pitstop.link)
+          picture
+            source(type="image/webp", srcset=`img/${pitstop.img}.webp`)
+            img.pitstop__image(src=`img/${pitstop.img}.png`, alt=pitstop.alt)
+
+mixin insurers(data)
+  .insurers__items 
+    each insurer in data.insurers
+      article.insurers__item 
+        picture
+          source(type="image/webp", srcset=`img/${insurer.img}.webp`)
+          img.insurers__image(src=`img/${insurer.img}.png`, alt=insurer.title)
+        h3.insurers__subtitle #{insurer.title}
+        a.insurers__phone.service__phone(href=`tel:${insurer.phone}`) Вызов
+
+mixin media(data)
+  .social-media__items 
+    each media in data.medias
+      if media.class==' social-media__content--site'
+        article(class="social-media__content" + media.class)
+          h3.visually-hidden #{media.title}
+          .social-media__text
+            p #[a.social-media__chat(href=`https://${media.span}`, target="_blank") #{media.span}] #{media.text}
+      else 
+        article(class="social-media__content" + media.class)
+          h3.visually-hidden #{media.title}
+          .social-media__text
+            p #[span.social-media__subtitle #{media.span}] #{media.text}
+          .social-media__link
+            a.social-media__subscribe(href=media.link, target="_blank") Подписаться →

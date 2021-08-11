@@ -1,0 +1,93 @@
+.social-media {
+  padding: 44px 0 34px;
+
+  &__title {
+    margin-bottom: 18px;
+  }
+
+  &__content {
+    position: relative;
+    padding: 18px 13px 18px 49px;
+    border: 1px solid @color-lilac;
+    border-radius: 8px;
+    background-color: @color-selago-light;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 14px;
+      top: 23px;
+      width: 22px;
+      height: 26px;
+      background: center/cover no-repeat url("../img/telegram-blue.svg");
+    }
+
+    &--news {
+      border-color: @color-blue-dark;
+      color: @color-white;
+      background-color: @color-blue-bay;
+
+      .social-media__subscribe {
+        color: @color-white;
+      }
+
+      &::after {
+        width: 23px;
+        height: 23px;
+        background-image: url("../img/insta-white.svg");
+      }
+    }
+
+    &--situations {
+      border-color: @color-canary;
+      background-color: @color-honeysuckle;
+
+      .social-media__subscribe {
+        color: @color-main;
+      }
+
+      &::after {
+        width: 23px;
+        height: 23px;
+        background-image: url("../img/insta.svg");
+      }
+    }
+
+    &--site::after {
+      width: 20px;
+      height: 20px;
+      background-image: url("../img/link.svg");
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 500;
+  }
+
+  &__link {
+    margin-top: 12px;
+    text-align: right;
+  }
+
+  &__subscribe {
+    color: @color-blue;
+  }
+
+  &__chat {
+    color: @color-main;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+}

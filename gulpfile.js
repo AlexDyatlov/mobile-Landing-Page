@@ -109,7 +109,7 @@ const images = () => {
 const webps = () => {
   return src('./src/img/**/*.{png,jpg,jpeg}')
   .pipe(webp())
-  .pipe(dest('./app/img/webp'))
+  .pipe(dest('./app/img/'))
 };
 
 const pugInclude = () => {
@@ -178,11 +178,9 @@ const toProd = (done) => {
   done();
 };
 
-exports.default = series(clean, pugInclude, scripts, styles, resources, images, svgSprites, watchFiles);
+exports.default = series(clean, pugInclude, scripts, styles, resources, images, webps, svgSprites, watchFiles);
 
-exports.build = series(toProd, clean, pugInclude, scripts, styles, resources, images, svgSprites, htmlMinify);
-
-exports.buildwebp = series(toProd, clean, pugInclude, scripts, styles, resources, images, webps, svgSprites, htmlMinify);
+exports.build = series(toProd, clean, pugInclude, scripts, styles, resources, images, webps, svgSprites, htmlMinify);
 
 exports.cache = series(cache, rewrite);
 

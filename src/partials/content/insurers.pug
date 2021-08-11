@@ -1,0 +1,20 @@
+section.insurers
+  .container 
+    .insurers__inner 
+      h2.insurers__title.title На случай ДТП
+      a.insurers__call(href="tel:") Дежурная часть
+    +insurers({'insurers':[{
+      'img' : 'alpha',
+      'title' : 'АльфаСтрахование',
+      'phone' : '79090324530',
+    }, {
+      'img' : 'bck',
+      'title' : 'Страховой Дом ВСК',
+      'phone' : '74542324610',
+    }, {
+      'img' : 'rosgos',
+      'title' : 'Росгосстрах',
+      'phone' : '74096924662',
+    }]})
+    button.insurers__btn(type="button") Еще 9 страховщиков
+    

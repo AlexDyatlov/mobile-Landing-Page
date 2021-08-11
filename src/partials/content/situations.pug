@@ -1,0 +1,17 @@
+section.situations
+  .container 
+    h2.situations__title.title Ситуации
+    .situations__descr.description
+      p Попроси помощь в чате!
+    ul.situations__items
+      -
+        var situations =["Если кончился бензин", 
+        "Если подперли и не оставили номер", 
+        "Если нужно прикурить",
+        "Если нужно отбуксировать",
+        "Помочь заменить колесо"]
+      each situation in situations
+        li.situations__item 
+          p.situations__text #{situation}
+    a.situations__link(href="#") ДПС-Контроль → Сегодня
+    
