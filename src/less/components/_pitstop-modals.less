@@ -1,0 +1,68 @@
+.pitstop-modal {
+  max-width: 570px;
+  width: 98%;
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__inner {
+    margin-bottom: 24px;
+    display: flex;
+  }
+
+  &__image {
+    margin-right: 18px;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__title {
+    margin-bottom: 13px;
+    display: block;
+    font-weight: 600;
+  }
+
+  &__btn {
+    position: relative;
+    padding: 9px 10px 11px;
+    max-width: 253px;
+    width: 100%;
+    border: 1px solid @color-geyser;
+    border-radius: 8px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      right: 35px;
+      top: 15px;
+      width: 6px;
+      height: 9px;
+      background: center/cover no-repeat url("../img/arrow-black.svg");
+      transform: rotate(90deg);
+      transition: transform .3s ease-in-out;
+
+      .open & {
+        transform: rotate(270deg);
+      }
+    }
+  }
+
+  .modal__close {
+    display: block;
+    padding: 5px 17px 6px;
+    margin-bottom: 31px;
+    position: static;
+    width: initial;
+    height: initial;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid @color-lilac;
+    border-radius: 5px;
+    background-image: none;
+  }
+}

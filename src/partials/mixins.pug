@@ -10,38 +10,39 @@ mixin menu-list(data)
         a.menu__link(href="#") #{item.link}
 
 mixin assistance-services(data)
-  .services
+  article.services
+    h2.visually-hidden Наши услуги
     each service in data.services
       article(class="service" + service.class)
         .service__content
           .service__box
             picture
-              source(type="image/webp", srcset=`img/${service.img}.webp`)
-              img.service__image(src=`img/${service.img}.jpg`, alt=service.alt)
+              source(type="image/webp", srcset=`img/${service.img}.webp 1x, img/${service.img}@2x.webp 2x, img/${service.img}@3x.webp 3x`)
+              img.service__image(src=`img/${service.img}.jpg` srcset=`img/${service.img}@2x.jpg 2x, img/${service.img}@3x.jpg 3x` alt=service.alt)
             span.service__score #{service.score}
           .service__info
             h3.service__title #{service.title}
             .service__descr 
               p #{service.descr}
         a.service__phone(href=`tel:${service.phone}`) Вызов
-        a.service__link(href=service.link, target="_blank")
+        a.service__link(href=service.link, target="_blank", title=service.linkname)
 
 mixin pitstops(data)
   ul.pitstop__items
     each pitstop in data.pitstops
       li.pitstop__item
-        a.pitstop__link(href=pitstop.link)
+        a.pitstop__link(data-graph-path="first")
           picture
-            source(type="image/webp", srcset=`img/${pitstop.img}.webp`)
-            img.pitstop__image(src=`img/${pitstop.img}.png`, alt=pitstop.alt)
+            source(type="image/webp", srcset=`img/${pitstop.img}.webp 1x, img/${pitstop.img}@2x.webp 2x, img/${pitstop.img}@3x.webp 3x`)
+            img.pitstop__image(src=`img/${pitstop.img}.png` srcset=`img/${pitstop.img}@2x.png 2x, img/${pitstop.img}@3x.png 3x` alt=pitstop.alt)
 
 mixin insurers(data)
   .insurers__items 
     each insurer in data.insurers
       article.insurers__item 
         picture
-          source(type="image/webp", srcset=`img/${insurer.img}.webp`)
-          img.insurers__image(src=`img/${insurer.img}.png`, alt=insurer.title)
+          source(type="image/webp", srcset=`img/${insurer.img}.webp 1x, img/${insurer.img}@2x.webp 2x, img/${insurer.img}@3x.webp 3x`)
+          img.insurers__image(src=`img/${insurer.img}.png` srcset=`img/${insurer.img}@2x.png 2x, img/${insurer.img}@3x.png 3x` alt=insurer.title)
         h3.insurers__subtitle #{insurer.title}
         a.insurers__phone.service__phone(href=`tel:${insurer.phone}`) Вызов
 
@@ -60,3 +61,12 @@ mixin media(data)
             p #[span.social-media__subtitle #{media.span}] #{media.text}
           .social-media__link
             a.social-media__subscribe(href=media.link, target="_blank") Подписаться →
+
+mixin slider(data)
+  .swiper-wrapper
+    each slider in data.sliders
+      .swiper-slide
+        .pitstop-slider__item
+          picture
+            source(type="image/webp", srcset=`img/${slider.img}.webp 1x, img/${slider.img}@2x.webp 2x, img/${slider.img}@3x.webp 3x`)
+            img.pitstop-slider__image(src=`img/${slider.img}.png` srcset=`img/${slider.img}@2x.png 2x, img/${slider.img}@3x.png 3x` alt=slider.alt)

@@ -8,20 +8,8 @@
 
   &__items {
     display: flex;
-    padding-bottom: 4px;
+    justify-content: space-between;
     margin-bottom: 28px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  &__item {
-    scroll-snap-align: end;
-    scroll-snap-stop: always;
-
-    &:not(:last-child) {
-      margin-right: 21px;
-    }
   }
 
   &__link {
@@ -36,11 +24,23 @@
     border-radius: 50%;
   }
 
-  &__menu {
-    text-align: right;
+  &__btn {
+    margin-left: auto;
+    display: block;
+    color: @color-blue;
+  }
+}
 
-    &-link {
-      color: @color-blue;
-    }
+.accordion__content {
+  overflow: hidden;
+  max-height: 0;
+  box-sizing: content-box;
+  opacity: 0;
+  transition: all .3s ease-out;
+  will-change: max-height;
+
+  .open & {
+    opacity: 1;
+
   }
 }

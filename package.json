@@ -9,7 +9,8 @@
     "build": "gulp build",
     "cache": "gulp cache",
     "backend": "gulp backend",
-    "code": "editorconfig-checker"
+    "code": "editorconfig-checker",
+    "deploy": "gh-pages -d app"
   },
   "author": "AlexWeb",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "browser-sync": "^2.26.14",
     "del": "^6.0.0",
     "editorconfig-checker": "^4.0.1",
+    "gh-pages": "^3.2.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
@@ -40,5 +42,6 @@
     "gulp-uglify-es": "^2.0.0",
     "gulp-webp": "^4.0.1",
     "node-w3c-validator": "^2.0.1"
-  }
+  },
+  "homepage": "http://alexdyatlov.github.io/mobile-Landing-Page"
 }

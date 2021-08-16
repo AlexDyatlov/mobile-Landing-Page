@@ -12,7 +12,6 @@
 
 .service {
   display: flex;
-  justify-content: space-between;
   background-color: @color-selago-light;
   border: 1px solid @color-lilac;
   border-radius: 8px;
@@ -24,8 +23,10 @@
 
     .service__link {
       position: relative;
+      margin-left: auto;
       display: block;
-      width: 28px;
+      max-width: 28px;
+      width: 100%;
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px;
       background-color: @color-blue-light;
@@ -50,6 +51,7 @@
 
   &__box {
     max-width: 42px;
+    width: 100%;
     margin-right: 16px;
   }
 
@@ -80,7 +82,7 @@
   }
 
   &__info {
-    max-width: 190px;
+    margin-right: 15px;
   }
 
   &__title {
@@ -104,6 +106,7 @@
     align-self: flex-end;
     margin-bottom: 25px;
     margin-right: 11px;
+    margin-left: auto;
     font-size: 14px;
     color: @color-blue;
 

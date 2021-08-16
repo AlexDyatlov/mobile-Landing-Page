@@ -38,8 +38,16 @@
     align-items: center;
     border-bottom: 1px solid @color-lilac;
 
+    &:nth-child(n+4) {
+      display: none;
+    }
+
     picture {
       line-height: 0;
+    }
+
+    &.is-visible {
+      display: flex;
     }
   }
 

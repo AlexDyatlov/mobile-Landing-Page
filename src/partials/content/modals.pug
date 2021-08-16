@@ -1,0 +1,104 @@
+.modal
+  .modal__container.pitstop-modal(data-graph-target="first")
+    button.modal__close ← Назад
+    .modal-content
+      ul.pitstop-modal__list
+        li.pitstop-modal__item.accordion
+          .pitstop-modal__inner
+            .pitstop__link.pitstop-modal__image
+              picture
+                source(type="image/webp", srcset="img/benzo-cafe.webp 1x, img/benzo-cafe@2x.webp 2x, img/benzo-cafe@3x.webp 3x")
+                img.pitstop__image(src="img/benzo-cafe.png", srcset="img/benzo-cafe@2x.png 2x, img/benzo-cafe@3x.png 3x" alt="Бензо кафе")
+            .pitstop-modal__content
+              strong.pitstop-modal__title Бензо кафе
+              button.pitstop-modal__btn.accordion__control(type="button", aria-expanded="false") Рзавернуть меню
+          .accordion__content(aria-hidden="true")
+            .swiper-container.pitstop-slider
+              +slider({'sliders':[{
+                'img' : 'benzo-menu',
+                'alt' : 'Бензо меню первые блюда',
+              }, {
+                'img' : 'benzo-burgers',
+                'alt' : 'Бензо меню бургеры',
+              }, {
+                'img' : 'benzo-coffee',
+                'alt' : 'Бензо меню кофе',
+              },{
+                'img' : 'benzo-tea',
+                'alt' : 'Бензо меню чай',
+              }]})
+        li.pitstop-modal__item.accordion
+          .pitstop-modal__inner
+            .pitstop__link.pitstop-modal__image
+              picture
+                source(type="image/webp", srcset='img/coffee.webp 1x, img/coffee@2x.webp 2x, img/coffee@3x.webp 3x')
+                img.pitstop__image(src='img/coffee.png', srcset="img/coffee@2x.png 2x, img/coffee@3x.png 3x" alt="Авто coffe")
+            .pitstop-modal__content
+              strong.pitstop-modal__title Авто Кофе
+              button.pitstop-modal__btn.accordion__control(type="button", aria-expanded="false") Рзавернуть меню
+          .accordion__content(aria-hidden="true")
+            .swiper-container.pitstop-slider
+              +slider({'sliders':[{
+                'img' : 'autocoffee-dishes',
+                'alt' : 'Авто Кофе меню блюда',
+                }, {
+                'img' : 'autocoffee-cocktails',
+                'alt' : 'Авто Кофе меню коктейли',
+                }, {
+                'img' : 'autocoffee-drinks',
+                'alt' : 'Авто Кофе меню напитки',
+              }]})
+        li.pitstop-modal__item.accordion
+          .pitstop-modal__inner
+            .pitstop__link.pitstop-modal__image
+              picture
+                source(type="image/webp", srcset='img/dram.webp 1x, img/dram@2x.webp 2x, img/dram@3x.webp 3x')
+                img.pitstop__image(src='img/dram.png', srcset="img/dram@2x.png 2x, img/dram@3x.png 3x" alt="Dram кафе")
+            .pitstop-modal__content
+              strong.pitstop-modal__title Dram кафе
+              button.pitstop-modal__btn.accordion__control(type="button", aria-expanded="false") Рзавернуть меню
+          .accordion__content(aria-hidden="true")
+            .swiper-container.pitstop-slider
+              +slider({'sliders':[{
+                'img' : 'benzo-menu',
+                'alt' : 'Бензо меню первые блюда',
+                }, {
+                'img' : 'benzo-burgers',
+                'alt' : 'Бензо меню бургеры',
+              }]})
+        li.pitstop-modal__item.accordion
+          .pitstop-modal__inner
+            .pitstop__link.pitstop-modal__image
+              picture
+                source(type="image/webp", srcset='img/food.webp 1x, img/food@2x.webp 2x, img/food@3x.webp 3x')
+                img.pitstop__image(src='img/food.png', srcset="img/food@2x.png 2x, img/food@3x.png 3x" alt="Кафе еда и точка")
+            .pitstop-modal__content
+              strong.pitstop-modal__title Кафе еда и точка
+              button.pitstop-modal__btn.accordion__control(type="button", aria-expanded="false") Рзавернуть меню
+          .accordion__content(aria-hidden="true")
+            .swiper-container.pitstop-slider
+              +slider({'sliders':[{
+                'img' : 'benzo-menu',
+                'alt' : 'Бензо меню первые блюда',
+                }, {
+                'img' : 'benzo-burgers',
+                'alt' : 'Бензо меню бургеры',
+              }]})
+        li.pitstop-modal__item.accordion
+          .pitstop-modal__inner
+            .pitstop__link.pitstop-modal__image
+              picture
+                source(type="image/webp", srcset="img/drive.webp 1x, img/drive@2x.webp 2x, img/drive@3x.webp 3x")
+                img.pitstop__image(src='img/drive.png', srcset="img/drive@2x.png 2x, img/drive@3x.png 3x" alt="Кафе соль и перец")
+            .pitstop-modal__content
+              strong.pitstop-modal__title Кафе соль и перец
+              button.pitstop-modal__btn.accordion__control(type="button", aria-expanded="false") Рзавернуть меню
+          .accordion__content(aria-hidden="true")
+            .swiper-container.pitstop-slider
+              +slider({'sliders':[{
+                'img' : 'benzo-menu',
+                'alt' : 'Бензо меню первые блюда',
+                }, {
+                'img' : 'benzo-burgers',
+                'alt' : 'Бензо меню бургеры',
+              }]})
